@@ -20,7 +20,7 @@ function activate(context) {
 	const title = RegExp.$1;
 
 	let addTask = vscode.commands.registerCommand(
-		"ticode.addTask",
+		"tickcode.addTask",
 		function () {
 			// 拼接 url
 			const tickURL = `ticktick://x-callback-url/v1/add_task?title=[${title}](vscode://file/${path})&list=me.pkm`;
@@ -32,7 +32,7 @@ function activate(context) {
 	);
 
 	let generateURL = vscode.commands.registerCommand(
-		"ticode.generateURL",
+		"tickcode.generateURL",
 		function () {
 			// 拼接 url
 			const vscodeURL = `vscode://file/${path}`;

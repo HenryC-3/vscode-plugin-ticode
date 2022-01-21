@@ -1,5 +1,5 @@
 {
-	"name": "ticode",
+	"name": "tickcode",
 	"publisher": "HenryHeDiff",
 	"icon": "icon.png",
 	"displayName": "ticode",
@@ -13,19 +13,19 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:ticode.addTask",
-		"onCommand:ticode.generateURL"
+		"onCommand:tickcode.addTask",
+		"onCommand:tickcode.generateURL"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "ticode.addTask",
-				"title": "ticode: add current page to ticktick"
+				"command": "tickcode.addTask",
+				"title": "tickcode: add current page to ticktick"
 			},
 			{
-				"command": "ticode.generateURL",
-				"title": "ticode: generate vscode url scheme for current file"
+				"command": "tickcode.generateURL",
+				"title": "tickcode: generate vscode url scheme for current file"
 			}
 		]
 	},
