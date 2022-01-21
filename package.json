@@ -1,9 +1,10 @@
 {
 	"name": "ticode",
 	"publisher": "HenryHeDiff",
-	"icon": "https://github.com/HenryC-3/vscode.plugin.ticode/blob/master/icon.png",
+	"icon": "icon.png",
 	"displayName": "ticode",
-	"description": "ticode",
+	"repository": "https://github.com/HenryC-3/vscode.plugin.ticode",
+	"description": "add task to tick tick, a task management tool, via url scheme",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.63.0"
