@@ -1,5 +1,7 @@
 {
 	"name": "ticode",
+	"publisher": "HenryHeDiff",
+	"icon": "https://github.com/HenryC-3/vscode.plugin.ticode/blob/master/icon.png",
 	"displayName": "ticode",
 	"description": "ticode",
 	"version": "0.0.1",
