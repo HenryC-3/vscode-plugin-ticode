@@ -1,65 +1,15 @@
-# productivity README
+## 简介
 
-This is the README for your extension "productivity". After writing up a brief description, we recommend including the following sections.
+ticode 是一个简单的 vscode 插件，通过 vscode 和 tick tick(滴答清单) 的提供的 url scheme，实现两者的简单交互，例如
 
-## Features
+-   在 vscode 中往 tick tick 中添加任务
+-   在 tick tick 中跳转到 vscode
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## 功能
 
-For example if there is an image subfolder under your extension project workspace:
+ticode 目前包含的命令及说明如下表所示
 
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+| 命令                                          | 说明                                                                                     |
+| --------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `add current page to ticktick`                | 跳转到 tick tick，并为当前页面在 tick tick 中创建一个任务，点击该任务标题可跳转回 vscode |
+| `generate vscode url scheme for current file` | 为当前页面生成 url scheme，并写入剪切板，点击该 url 可返回当前文件                       |
