@@ -18,7 +18,23 @@ function activate(context) {
 	const re = /\/([^\/]+)(.md)$/;
 	re.test(path);
 	const title = RegExp.$1;
+	// 获得光标位置
+	function getCursorPosition() {
+		const activeEditor = vscode.window.activeTextEditor;
+		if (activeEditor) {
+			return {
+				line: activeEditor.selection.active.line,
+				column: activeEditor.selection.active.character,
+			};
+		} else {
+			return {
+				line: 0,
+				column: 0,
+			};
+		}
+	}
 
+	// ## 命令逻辑
 	let addTask = vscode.commands.registerCommand(
 		"tickcode.addTask",
 		function () {
@@ -31,6 +47,7 @@ function activate(context) {
 		}
 	);
 
+	// ## 命令逻辑
 	let generateURL = vscode.commands.registerCommand(
 		"tickcode.generateURL",
 		function () {
@@ -43,7 +60,20 @@ function activate(context) {
 		}
 	);
 
-	context.subscriptions.push(addTask, generateURL);
+	// ## 命令逻辑
+	let generateMDLink = vscode.commands.registerCommand(
+		"tickcode.generateMDLink",
+		function () {
+			const { line, column } = getCursorPosition();
+			// 拼接 url
+			const vscodeURL = `[→](vscode://file/${path}:${line}:${column})`;
+			// 写入剪切板
+			vscode.env.clipboard.writeText(vscodeURL);
+			// 显示消息
+			vscode.window.showInformationMessage("markdown link generated");
+		}
+	);
+	context.subscriptions.push(addTask, generateURL, generateMDLink);
 }
 
 // this method is called when your extension is deactivated

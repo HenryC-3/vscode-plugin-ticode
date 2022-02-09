@@ -14,7 +14,8 @@
 	],
 	"activationEvents": [
 		"onCommand:tickcode.addTask",
-		"onCommand:tickcode.generateURL"
+		"onCommand:tickcode.generateURL",
+		"onCommand:tickcode.generateMDLink"
 	],
 	"main": "./extension.js",
 	"contributes": {
@@ -25,7 +26,11 @@
 			},
 			{
 				"command": "tickcode.generateURL",
-				"title": "tickcode: generate vscode url scheme for current file"
+				"title": "tickcode: generate url for current file"
+			},
+			{
+				"command": "tickcode.generateMDLink",
+				"title": "tickcode: generate markdown link for current file"
 			}
 		]
 	},
