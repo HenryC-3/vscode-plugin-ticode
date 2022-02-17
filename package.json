@@ -5,7 +5,7 @@
 	"displayName": "ticode",
 	"repository": "https://github.com/HenryC-3/vscode.plugin.ticode",
 	"description": "add task to tick tick, a task management tool, via url scheme",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"engines": {
 		"vscode": "^1.63.0"
 	},

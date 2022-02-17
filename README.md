@@ -13,3 +13,4 @@ ticode 目前包含的命令及说明如下表所示
 | --------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | `add current page to ticktick`                | 跳转到 tick tick，并为当前页面在 tick tick 中创建一个任务，点击该任务标题可跳转回 vscode |
 | `generate vscode url scheme for current file` | 为当前页面生成 url scheme，并写入剪切板，点击该 url 可返回当前文件                       |
+| `generate markdown link for current file`     | 为当前页面生成 markdown link，并写入剪切板，点击该 url 可返回当前文件                    |
