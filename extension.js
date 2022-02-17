@@ -9,15 +9,19 @@ const vscode = require("vscode");
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-	// 控制台提示
-	console.log("ticktick active");
+	// 获取当前编辑器中文件的绝对路径以及文件标题
+	function getFileInfo() {
+		const path = vscode.window.activeTextEditor.document.uri.path;
+		// 获取标题，以 .md 结束，以 / 开始
+		const re = /\/([^\/]+)(.md)$/;
+		re.test(path);
+		const title = RegExp.$1;
+		return {
+			path,
+			title,
+		};
+	}
 
-	// 获取路径
-	const path = vscode.window.activeTextEditor.document.uri.path;
-	// 获取标题，以 .md 结束，以 / 开始
-	const re = /\/([^\/]+)(.md)$/;
-	re.test(path);
-	const title = RegExp.$1;
 	// 获得光标位置
 	function getCursorPosition() {
 		const activeEditor = vscode.window.activeTextEditor;
@@ -38,6 +42,7 @@ function activate(context) {
 	let addTask = vscode.commands.registerCommand(
 		"tickcode.addTask",
 		function () {
+			const { title, path } = getFileInfo();
 			// 拼接 url
 			const tickURL = `ticktick://x-callback-url/v1/add_task?title=[${title}](vscode://file/${path})&list=me.pkm`;
 			// 打开 url
@@ -51,6 +56,7 @@ function activate(context) {
 	let generateURL = vscode.commands.registerCommand(
 		"tickcode.generateURL",
 		function () {
+			const { path } = getFileInfo();
 			// 拼接 url
 			const vscodeURL = `vscode://file/${path}`;
 			// 写入剪切板
@@ -64,6 +70,7 @@ function activate(context) {
 	let generateMDLink = vscode.commands.registerCommand(
 		"tickcode.generateMDLink",
 		function () {
+			const { path } = getFileInfo();
 			const { line, column } = getCursorPosition();
 			// 拼接 url
 			const vscodeURL = `[→](vscode://file/${path}:${line}:${column})`;
